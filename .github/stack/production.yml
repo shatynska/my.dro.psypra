@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  my_dro_psypra_com:
+    image: shatynska/my-dro-psypra-com:latest
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.docker.network=traefik-public'
+      - 'traefik.http.routers.my_dro_psypra_com.entrypoints=https'
+      - 'traefik.http.routers.my_dro_psypra_com.rule=Host(`my.dro.psypra.com`)'
+      - 'traefik.http.routers.my_dro_psypra_com.tls=true'
+      - 'traefik.http.routers.my_dro_psypra_com.tls.certresolver=letsEncrypt'
+      - 'traefik.http.services.my_dro_psypra_com.loadbalancer.server.port=5173'
+    ports:
+      - 5010:5173
+    networks:
+      - traefik-public
+      - dro-psypra-com
+
+networks:
+  traefik-public:
+    external: true
+  dro-psypra-com:
+    external: true
