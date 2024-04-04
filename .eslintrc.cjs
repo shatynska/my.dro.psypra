@@ -16,13 +16,14 @@ module.exports = {
   ],
   ignorePatterns: [
     'dist',
+    'notes',
     '.eslintrc.cjs',
     'tailwind.config.ts',
     'postcss.config.js',
     'vite.config.ts',
     'vitest.config.ts',
     'kubb.config.js',
-    'notes',
+    'src/shared/api/generated',
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
