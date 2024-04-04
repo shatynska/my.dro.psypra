@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+
 import { QueryProvider } from '~/shared/ui/QueryProvider';
+
 import { Home } from '../pages/home';
 import './index.css';
 
