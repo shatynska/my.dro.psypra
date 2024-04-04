@@ -1,18 +1,20 @@
-import { z } from "zod";
-import { userResponseDtoSchema } from "../userResponseDtoSchema";
-import { registerDtoSchema } from "../registerDtoSchema";
+import { z } from 'zod';
 
+import { registerDtoSchema } from '../registerDtoSchema';
+import { userResponseDtoSchema } from '../userResponseDtoSchema';
 
-export const authControllerRegister201Schema = z.lazy(() => userResponseDtoSchema);
+export const authControllerRegister201Schema = z.lazy(
+  () => userResponseDtoSchema,
+);
 
+export const authControllerRegister400Schema = z.any();
 
-export const authControllerRegister400Schema = ;
+export const authControllerRegister409Schema = z.any();
 
+export const authControllerRegisterMutationRequestSchema = z.lazy(
+  () => registerDtoSchema,
+);
 
-export const authControllerRegister409Schema = ;
-
-
-export const authControllerRegisterMutationRequestSchema = z.lazy(() => registerDtoSchema);
-
-
-export const authControllerRegisterMutationResponseSchema = z.lazy(() => userResponseDtoSchema);
+export const authControllerRegisterMutationResponseSchema = z.lazy(
+  () => userResponseDtoSchema,
+);
