@@ -49,6 +49,16 @@ export const axiosInstance = axios.create({
 export async function client<TData, TError = unknown, TVariables = unknown>(
   config: RequestConfig<TVariables>,
 ): Promise<ResponseConfig<TData>> {
+  if (typeof window !== 'undefined' && typeof window.document !== 'undefined') {
+    const accessToken = localStorage.getItem('accessToken');
+    if (accessToken) {
+      // eslint-disable-next-line no-param-reassign
+      if (!config.headers) config.headers = {};
+      // eslint-disable-next-line no-param-reassign
+      config.headers.Authorization = accessToken;
+    }
+  }
+
   const promise = axiosInstance
     .request<TVariables, ResponseConfig<TData>>({ ...config })
     .catch((e: AxiosError<TError>) => {
