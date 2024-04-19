@@ -73,8 +73,16 @@ module.exports = {
     ],
     'prettier/prettier': 'error',
     'import/prefer-default-export': 'off',
-    'import/extensions': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/prop-types': 'off',
+    'react/jsx-props-no-spreading': 'off',
   },
+  overrides: [
+    {
+      files: ['src/shared/ui/*'],
+      rules: {
+        'react/prop-types': 'off',
+        'react-refresh/only-export-components': 'off',
+      },
+    },
+  ],
 };
