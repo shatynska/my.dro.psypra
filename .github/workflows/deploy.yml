@@ -42,7 +42,7 @@ jobs:
       - name: Make envfile
         uses: SpicyPizza/create-envfile@v2.0
         with:
-          API_BASE_URL: 'https://dro.psypra.com'
+          envkey_VITE_API_BASE_URL: 'https://dro.psypra.com'
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
