@@ -1,15 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { QueryProvider } from '~/shared/ui/QueryProvider';
-
 import { Home } from '../pages/home';
+
 import './index.css';
+import { QueryProvider, ReduxProvider } from './providers';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <QueryProvider>
-      <Home />
-    </QueryProvider>
+    <ReduxProvider>
+      <QueryProvider>
+        <Home />
+      </QueryProvider>
+    </ReduxProvider>
   </React.StrictMode>,
 );
