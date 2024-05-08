@@ -52,9 +52,7 @@ export async function client<TData, TError = unknown, TVariables = unknown>(
   if (typeof window !== 'undefined' && typeof window.document !== 'undefined') {
     const accessToken = localStorage.getItem('accessToken');
     if (accessToken) {
-      // eslint-disable-next-line no-param-reassign
       if (!config.headers) config.headers = {};
-      // eslint-disable-next-line no-param-reassign
       config.headers.Authorization = accessToken;
     }
   }
