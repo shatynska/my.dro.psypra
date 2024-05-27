@@ -11,12 +11,16 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-const rootReducer = combineReducers({});
+import { userModel } from '~/entities/user';
+
+const rootReducer = combineReducers({
+  [userModel.userSlice.name]: userModel.userSlice.reducer,
+});
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: [userModel.userSlice.name],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
