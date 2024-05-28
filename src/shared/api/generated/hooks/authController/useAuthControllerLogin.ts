@@ -1,21 +1,20 @@
-import type { UseMutationOptions } from '@tanstack/react-query';
-import { useMutation } from '@tanstack/react-query';
 import client from '../../../client';
+import { useMutation } from '@tanstack/react-query';
 import type {
-  AuthControllerLogin400,
-  AuthControllerLogin401,
   AuthControllerLoginMutationRequest,
   AuthControllerLoginMutationResponse,
+  AuthControllerLogin400,
 } from '../../models/authController/AuthControllerLogin';
+import type { UseMutationOptions } from '@tanstack/react-query';
 
 type AuthControllerLoginClient = typeof client<
   AuthControllerLoginMutationResponse,
-  AuthControllerLogin400 | AuthControllerLogin401,
+  AuthControllerLogin400,
   AuthControllerLoginMutationRequest
 >;
 type AuthControllerLogin = {
   data: AuthControllerLoginMutationResponse;
-  error: AuthControllerLogin400 | AuthControllerLogin401;
+  error: AuthControllerLogin400;
   request: AuthControllerLoginMutationRequest;
   pathParams: never;
   queryParams: never;

@@ -1,6 +1,13 @@
+export * from './errorDtoSchema';
+export * from './getCoreResponseSchema';
+export * from './jwtPayloadDtoSchema';
 export * from './loginDtoSchema';
 export * from './loginResponseDtoSchema';
 export * from './registerDtoSchema';
+export * from './updateFirstNameRequestBodySchema';
+export * from './updateIsPublicRequestBodySchema';
+export * from './updateLastNameRequestBodySchema';
 export * from './userResponseDtoSchema';
 export * as usersSchemas from './usersController/index';
 export * as authSchemas from './authController/index';
+export * as profileSchemas from './profileController/index';

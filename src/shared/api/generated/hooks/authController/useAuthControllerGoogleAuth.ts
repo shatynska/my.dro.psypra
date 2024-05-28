@@ -1,17 +1,17 @@
+import client from '../../../client';
+import {
+  useQuery,
+  queryOptions,
+  useSuspenseQuery,
+} from '@tanstack/react-query';
+import type { AuthControllerGoogleAuthQueryResponse } from '../../models/authController/AuthControllerGoogleAuth';
 import type {
-  QueryKey,
   QueryObserverOptions,
   UseQueryResult,
+  QueryKey,
   UseSuspenseQueryOptions,
   UseSuspenseQueryResult,
 } from '@tanstack/react-query';
-import {
-  queryOptions,
-  useQuery,
-  useSuspenseQuery,
-} from '@tanstack/react-query';
-import client from '../../../client';
-import type { AuthControllerGoogleAuthQueryResponse } from '../../models/authController/AuthControllerGoogleAuth';
 
 type AuthControllerGoogleAuthClient = typeof client<
   AuthControllerGoogleAuthQueryResponse,

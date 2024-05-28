@@ -14,13 +14,13 @@ export type UserResponseDto = {
    */
   userName: string;
   /**
-   * @type string | undefined
+   * @type string
    */
-  email?: string;
+  email: string | null;
   /**
-   * @type string | undefined
+   * @type string
    */
-  phone?: string;
+  phone: string | null;
   /**
    * @type string
    */

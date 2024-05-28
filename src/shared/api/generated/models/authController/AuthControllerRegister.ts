@@ -3,9 +3,9 @@ import type { UserResponseDto } from '../UserResponseDto';
 
 export type AuthControllerRegister201 = UserResponseDto;
 
-export type AuthControllerRegister400 = undefined;
+export type AuthControllerRegister400 = any;
 
-export type AuthControllerRegister409 = undefined;
+export type AuthControllerRegister409 = any;
 
 export type AuthControllerRegisterMutationRequest = RegisterDto;
 

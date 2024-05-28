@@ -7,8 +7,8 @@ export const usersControllerFindOnePathParamsSchema = z.object({
 
 export const usersControllerFindOne200Schema = z.lazy(
   () => userResponseDtoSchema,
-);
+).schema;
 
 export const usersControllerFindOneQueryResponseSchema = z.lazy(
   () => userResponseDtoSchema,
-);
+).schema;
