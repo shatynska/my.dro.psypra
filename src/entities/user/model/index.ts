@@ -1,1 +1,7 @@
-export { logout, selectUser, setUser, userSlice } from './slice';
+export {
+  logout,
+  selectUser,
+  selectUserName,
+  setUser,
+  userSlice,
+} from './slice';
