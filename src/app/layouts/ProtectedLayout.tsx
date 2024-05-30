@@ -1,6 +1,8 @@
+import { Suspense } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 import { useAppSelector } from '~/shared/lib';
+import { Skeleton } from '~/shared/ui/skeleton';
 
 import { userModel } from '~/entities/user';
 
@@ -18,7 +20,9 @@ export function ProtectedLayout() {
       <HeaderWidget />
       <div className="flex">
         <main className="w-full bg-muted p-8">
-          <Outlet />
+          <Suspense fallback={<Skeleton />}>
+            <Outlet />
+          </Suspense>
         </main>
       </div>
     </>
