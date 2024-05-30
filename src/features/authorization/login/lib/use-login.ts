@@ -4,7 +4,7 @@ import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { authHooks, authSchemas } from '~/shared/api';
-import { useAppDispatch } from '~/shared/model/use-app-dispatch';
+import { useAppDispatch } from '~/shared/lib';
 
 import { userModel } from '~/entities/user';
 

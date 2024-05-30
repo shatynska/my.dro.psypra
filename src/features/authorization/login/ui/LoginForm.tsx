@@ -2,7 +2,7 @@
 
 import { Navigate } from 'react-router-dom';
 
-import { useAppSelector } from '~/shared/model/use-app-selector';
+import { useAppSelector } from '~/shared/lib';
 import { Button } from '~/shared/ui/button';
 import {
   Card,

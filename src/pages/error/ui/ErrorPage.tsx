@@ -1,6 +1,6 @@
 import { Link, Navigate, useRouteError } from 'react-router-dom';
 
-import { useAppSelector } from '~/shared/model/use-app-selector';
+import { useAppSelector } from '~/shared/lib';
 
 import { userModel } from '~/entities/user';
 

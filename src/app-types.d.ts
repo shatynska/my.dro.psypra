@@ -1,9 +1,8 @@
 /**
  * ⚠️ FSD
  *
- * Its hack way to export redux infering types from scr/app
- * and use it in src/shared/model/use-app-dispatch.ts &
- * src/shared/model/use-app-selector.ts
+ * Its hack way to export redux inferring types from scr/app
+ * and use it in src/shared/lib/react-redux.ts
  */
 
 declare type RootState = import('./src/app/appStore').RootState;

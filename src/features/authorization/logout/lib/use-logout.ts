@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-import { useAppDispatch } from '~/shared/model/use-app-dispatch';
+import { useAppDispatch } from '~/shared/lib';
 
 import { userModel } from '~/entities/user';
 
