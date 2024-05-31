@@ -1,8 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom';
 
+import { BriefPage } from '~/pages/brief';
 import { ErrorPage } from '~/pages/error';
 import { LoginPage } from '~/pages/login';
 import { MainPage } from '~/pages/main';
+import { PhotoPage } from '~/pages/photo';
 
 import { ProtectedLayout, RootLayout } from './layouts';
 
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
           {
             path: ':specialist/main',
             element: <MainPage />,
+          },
+          {
+            path: ':specialist/photo',
+            element: <PhotoPage />,
+          },
+          {
+            path: ':specialist/brief',
+            element: <BriefPage />,
           },
         ],
       },
