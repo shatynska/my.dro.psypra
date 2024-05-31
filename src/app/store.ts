@@ -11,10 +11,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
+import { coreDataModel } from '~/entities/core-data';
 import { userModel } from '~/entities/user';
 
 const rootReducer = combineReducers({
   [userModel.userSlice.name]: userModel.userSlice.reducer,
+  [coreDataModel.coreDataSlice.name]: coreDataModel.coreDataSlice.reducer,
 });
 
 const persistConfig = {
