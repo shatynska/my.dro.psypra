@@ -1,8 +1,5 @@
 'use client';
 
-import { Navigate } from 'react-router-dom';
-
-import { useAppSelector } from '~/shared/lib';
 import { Button } from '~/shared/ui/button';
 import {
   Card,
@@ -21,18 +18,10 @@ import {
 } from '~/shared/ui/form';
 import { Input } from '~/shared/ui/input';
 
-import { userModel } from '~/entities/user';
-
 import { useLogin } from '../lib';
 
 export function LoginForm() {
   const { form, onSubmit } = useLogin();
-
-  const authorizedUser = useAppSelector(userModel.selectUser);
-
-  if (authorizedUser !== null && authorizedUser.userName) {
-    return <Navigate to={`/${authorizedUser.userName}/main`} replace />;
-  }
 
   return (
     <Form {...form}>
