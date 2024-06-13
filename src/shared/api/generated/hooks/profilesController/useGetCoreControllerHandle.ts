@@ -9,7 +9,7 @@ import type {
   GetCoreControllerHandlePathParams,
   GetCoreControllerHandle401,
   GetCoreControllerHandle403,
-} from '../../models/profileController/GetCoreControllerHandle';
+} from '../../models/profilesController/GetCoreControllerHandle';
 import type {
   QueryObserverOptions,
   UseQueryResult,
@@ -41,7 +41,7 @@ export const getCoreControllerHandleQueryKey = (
 ) =>
   [
     {
-      url: '/api/profile/:specialist/core',
+      url: '/api/profiles/:specialist/core',
       params: { specialist: specialist },
     },
   ] as const;
@@ -61,7 +61,7 @@ export function getCoreControllerHandleQueryOptions(
         GetCoreControllerHandle['error']
       >({
         method: 'get',
-        url: `/api/profile/${specialist}/core`,
+        url: `/api/profiles/${specialist}/core`,
         ...options,
       });
       return res.data;
@@ -69,7 +69,7 @@ export function getCoreControllerHandleQueryOptions(
   });
 }
 /**
- * @link /api/profile/:specialist/core
+ * @link /api/profiles/:specialist/core
  */
 export function useGetCoreControllerHandle<
   TData = GetCoreControllerHandle['response'],
@@ -113,7 +113,7 @@ export const getCoreControllerHandleSuspenseQueryKey = (
 ) =>
   [
     {
-      url: '/api/profile/:specialist/core',
+      url: '/api/profiles/:specialist/core',
       params: { specialist: specialist },
     },
   ] as const;
@@ -133,7 +133,7 @@ export function getCoreControllerHandleSuspenseQueryOptions(
         GetCoreControllerHandle['error']
       >({
         method: 'get',
-        url: `/api/profile/${specialist}/core`,
+        url: `/api/profiles/${specialist}/core`,
         ...options,
       });
       return res.data;
@@ -141,7 +141,7 @@ export function getCoreControllerHandleSuspenseQueryOptions(
   });
 }
 /**
- * @link /api/profile/:specialist/core
+ * @link /api/profiles/:specialist/core
  */
 export function useGetCoreControllerHandleSuspense<
   TData = GetCoreControllerHandle['response'],

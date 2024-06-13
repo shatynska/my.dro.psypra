@@ -1,5 +1,9 @@
 export type GetCoreResponse = {
   /**
+   * @type boolean
+   */
+  isPublic: boolean;
+  /**
    * @type string
    */
   firstName: string;
@@ -7,8 +11,4 @@ export type GetCoreResponse = {
    * @type string
    */
   lastName: string;
-  /**
-   * @type boolean
-   */
-  isPublic: boolean;
 };

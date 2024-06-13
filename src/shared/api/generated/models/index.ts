@@ -9,5 +9,5 @@ export * from './UpdateIsPublicRequestBody';
 export * from './UpdateLastNameRequestBody';
 export * from './UserResponseDto';
 export * from './authController/index';
-export * from './profileController/index';
+export * from './profilesController/index';
 export * from './usersController/index';

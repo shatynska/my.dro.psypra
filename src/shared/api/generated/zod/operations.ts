@@ -1,14 +1,4 @@
 import {
-  usersControllerFindOneQueryResponseSchema,
-  usersControllerFindOnePathParamsSchema,
-} from './usersController/usersControllerFindOneSchema';
-import {
-  usersControllerRemoveMutationResponseSchema,
-  usersControllerRemovePathParamsSchema,
-} from './usersController/usersControllerRemoveSchema';
-import { usersControllerMeQueryResponseSchema } from './usersController/usersControllerMeSchema';
-import { usersControllerUpdateUserMutationResponseSchema } from './usersController/usersControllerUpdateUserSchema';
-import {
   authControllerRegisterMutationRequestSchema,
   authControllerRegisterMutationResponseSchema,
   authControllerRegister400Schema,
@@ -28,78 +18,44 @@ import {
   authControllerSuccessGoogleQueryParamsSchema,
 } from './authController/authControllerSuccessGoogleSchema';
 import {
+  usersControllerFindOneQueryResponseSchema,
+  usersControllerFindOnePathParamsSchema,
+} from './usersController/usersControllerFindOneSchema';
+import {
+  usersControllerRemoveMutationResponseSchema,
+  usersControllerRemovePathParamsSchema,
+} from './usersController/usersControllerRemoveSchema';
+import { usersControllerMeQueryResponseSchema } from './usersController/usersControllerMeSchema';
+import { usersControllerUpdateUserMutationResponseSchema } from './usersController/usersControllerUpdateUserSchema';
+import {
   getCoreControllerHandleQueryResponseSchema,
   getCoreControllerHandle401Schema,
   getCoreControllerHandle403Schema,
   getCoreControllerHandlePathParamsSchema,
-} from './profileController/getCoreControllerHandleSchema';
+} from './profilesController/getCoreControllerHandleSchema';
 import {
   updateFirstNameControllerHandleMutationRequestSchema,
   updateFirstNameControllerHandleMutationResponseSchema,
   updateFirstNameControllerHandle401Schema,
   updateFirstNameControllerHandle403Schema,
   updateFirstNameControllerHandlePathParamsSchema,
-} from './profileController/updateFirstNameControllerHandleSchema';
+} from './profilesController/updateFirstNameControllerHandleSchema';
 import {
   updateIsPublicControllerHandleMutationRequestSchema,
   updateIsPublicControllerHandleMutationResponseSchema,
   updateIsPublicControllerHandle401Schema,
   updateIsPublicControllerHandle403Schema,
   updateIsPublicControllerHandlePathParamsSchema,
-} from './profileController/updateIsPublicControllerHandleSchema';
+} from './profilesController/updateIsPublicControllerHandleSchema';
 import {
   updateLastNameControllerHandleMutationRequestSchema,
   updateLastNameControllerHandleMutationResponseSchema,
   updateLastNameControllerHandle401Schema,
   updateLastNameControllerHandle403Schema,
   updateLastNameControllerHandlePathParamsSchema,
-} from './profileController/updateLastNameControllerHandleSchema';
+} from './profilesController/updateLastNameControllerHandleSchema';
 
 export const operations = {
-  UsersController_findOne: {
-    request: undefined,
-    parameters: {
-      path: usersControllerFindOnePathParamsSchema,
-      query: undefined,
-      header: undefined,
-    },
-    responses: {
-      200: usersControllerFindOneQueryResponseSchema,
-    },
-  },
-  UsersController_remove: {
-    request: undefined,
-    parameters: {
-      path: usersControllerRemovePathParamsSchema,
-      query: undefined,
-      header: undefined,
-    },
-    responses: {
-      200: usersControllerRemoveMutationResponseSchema,
-    },
-  },
-  UsersController_me: {
-    request: undefined,
-    parameters: {
-      path: undefined,
-      query: undefined,
-      header: undefined,
-    },
-    responses: {
-      200: usersControllerMeQueryResponseSchema,
-    },
-  },
-  UsersController_updateUser: {
-    request: undefined,
-    parameters: {
-      path: undefined,
-      query: undefined,
-      header: undefined,
-    },
-    responses: {
-      200: usersControllerUpdateUserMutationResponseSchema,
-    },
-  },
   AuthController_register: {
     request: authControllerRegisterMutationRequestSchema,
     parameters: {
@@ -180,6 +136,50 @@ export const operations = {
       200: authControllerSuccessGoogleQueryResponseSchema,
     },
   },
+  UsersController_findOne: {
+    request: undefined,
+    parameters: {
+      path: usersControllerFindOnePathParamsSchema,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: usersControllerFindOneQueryResponseSchema,
+    },
+  },
+  UsersController_remove: {
+    request: undefined,
+    parameters: {
+      path: usersControllerRemovePathParamsSchema,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: usersControllerRemoveMutationResponseSchema,
+    },
+  },
+  UsersController_me: {
+    request: undefined,
+    parameters: {
+      path: undefined,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: usersControllerMeQueryResponseSchema,
+    },
+  },
+  UsersController_updateUser: {
+    request: undefined,
+    parameters: {
+      path: undefined,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: usersControllerUpdateUserMutationResponseSchema,
+    },
+  },
   GetCoreController_handle: {
     request: undefined,
     parameters: {
@@ -234,16 +234,6 @@ export const operations = {
   },
 } as const;
 export const paths = {
-  '/api/users/{identifier}': {
-    get: operations['UsersController_findOne'],
-  },
-  '/api/users/{id}': {
-    delete: operations['UsersController_remove'],
-  },
-  '/api/users': {
-    get: operations['UsersController_me'],
-    put: operations['UsersController_updateUser'],
-  },
   '/api/auth/register': {
     post: operations['AuthController_register'],
   },
@@ -265,16 +255,26 @@ export const paths = {
   '/api/auth/success-google': {
     get: operations['AuthController_successGoogle'],
   },
-  '/api/profile/{specialist}/core': {
+  '/api/users/{identifier}': {
+    get: operations['UsersController_findOne'],
+  },
+  '/api/users/{id}': {
+    delete: operations['UsersController_remove'],
+  },
+  '/api/users': {
+    get: operations['UsersController_me'],
+    put: operations['UsersController_updateUser'],
+  },
+  '/api/profiles/{specialist}/core': {
     get: operations['GetCoreController_handle'],
   },
-  '/api/profile/{specialist}/core/first-name': {
+  '/api/profiles/{specialist}/core/first-name': {
     patch: operations['UpdateFirstNameController_handle'],
   },
-  '/api/profile/{specialist}/core/is-public': {
+  '/api/profiles/{specialist}/core/is-public': {
     patch: operations['UpdateIsPublicController_handle'],
   },
-  '/api/profile/{specialist}/core/last-name': {
+  '/api/profiles/{specialist}/core/last-name': {
     patch: operations['UpdateLastNameController_handle'],
   },
 } as const;

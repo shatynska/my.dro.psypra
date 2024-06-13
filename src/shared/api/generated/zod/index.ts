@@ -8,6 +8,6 @@ export * from './updateFirstNameRequestBodySchema';
 export * from './updateIsPublicRequestBodySchema';
 export * from './updateLastNameRequestBodySchema';
 export * from './userResponseDtoSchema';
-export * as usersSchemas from './usersController/index';
 export * as authSchemas from './authController/index';
-export * as profileSchemas from './profileController/index';
+export * as usersSchemas from './usersController/index';
+export * as profilesSchemas from './profilesController/index';

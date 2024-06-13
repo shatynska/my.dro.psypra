@@ -6,7 +6,7 @@ import type {
   UpdateFirstNameControllerHandlePathParams,
   UpdateFirstNameControllerHandle401,
   UpdateFirstNameControllerHandle403,
-} from '../../models/profileController/UpdateFirstNameControllerHandle';
+} from '../../models/profilesController/UpdateFirstNameControllerHandle';
 import type { UseMutationOptions } from '@tanstack/react-query';
 
 type UpdateFirstNameControllerHandleClient = typeof client<
@@ -31,7 +31,7 @@ type UpdateFirstNameControllerHandle = {
 };
 /**
  * @summary Update first name
- * @link /api/profile/:specialist/core/first-name
+ * @link /api/profiles/:specialist/core/first-name
  */
 export function useUpdateFirstNameControllerHandle(
   specialist: UpdateFirstNameControllerHandlePathParams['specialist'],
@@ -54,7 +54,7 @@ export function useUpdateFirstNameControllerHandle(
         UpdateFirstNameControllerHandle['request']
       >({
         method: 'patch',
-        url: `/api/profile/${specialist}/core/first-name`,
+        url: `/api/profiles/${specialist}/core/first-name`,
         data,
         ...clientOptions,
       });

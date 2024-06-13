@@ -6,7 +6,7 @@ import type {
   UpdateIsPublicControllerHandlePathParams,
   UpdateIsPublicControllerHandle401,
   UpdateIsPublicControllerHandle403,
-} from '../../models/profileController/UpdateIsPublicControllerHandle';
+} from '../../models/profilesController/UpdateIsPublicControllerHandle';
 import type { UseMutationOptions } from '@tanstack/react-query';
 
 type UpdateIsPublicControllerHandleClient = typeof client<
@@ -29,7 +29,7 @@ type UpdateIsPublicControllerHandle = {
 };
 /**
  * @summary Update isPublic field
- * @link /api/profile/:specialist/core/is-public
+ * @link /api/profiles/:specialist/core/is-public
  */
 export function useUpdateIsPublicControllerHandle(
   specialist: UpdateIsPublicControllerHandlePathParams['specialist'],
@@ -52,7 +52,7 @@ export function useUpdateIsPublicControllerHandle(
         UpdateIsPublicControllerHandle['request']
       >({
         method: 'patch',
-        url: `/api/profile/${specialist}/core/is-public`,
+        url: `/api/profiles/${specialist}/core/is-public`,
         data,
         ...clientOptions,
       });

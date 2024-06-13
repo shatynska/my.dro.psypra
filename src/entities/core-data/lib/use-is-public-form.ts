@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import { z } from 'zod';
 
-import { profileHooks, profileSchemas } from '~/shared/api';
+import { profilesHooks, profilesSchemas } from '~/shared/api';
 import { useAppDispatch, useAppSelector } from '~/shared/lib';
 
 import { selectCoreData, setIsPublic } from '../model';
@@ -14,10 +14,10 @@ export const useIsPublicForm = (specialist: string) => {
   const dispatch = useAppDispatch();
 
   const { mutateAsync } =
-    profileHooks.useUpdateIsPublicControllerHandle(specialist);
+    profilesHooks.useUpdateIsPublicControllerHandle(specialist);
 
   const schema =
-    profileSchemas.updateIsPublicControllerHandleMutationRequestSchema;
+    profilesSchemas.updateIsPublicControllerHandleMutationRequestSchema;
   type Schema = z.infer<typeof schema>;
   const form = useForm<Schema>({
     resolver: zodResolver(schema),
