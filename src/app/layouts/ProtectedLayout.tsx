@@ -13,7 +13,7 @@ export function ProtectedLayout() {
   const authorizedUser = useAppSelector(userModel.selectUser);
 
   if (!authorizedUser) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/" replace />;
   }
 
   return (

@@ -14,7 +14,7 @@ export const useLogout = () => {
   const handleLogout = () => {
     dispatch(userModel.logout());
     persistor.purge();
-    navigate('/login', { replace: true });
+    navigate('/', { replace: true });
   };
 
   return { handleLogout };

@@ -1,17 +1,7 @@
-import { Link, Navigate, useRouteError } from 'react-router-dom';
-
-import { useAppSelector } from '~/shared/lib';
-
-import { userModel } from '~/entities/user';
+import { Link, useRouteError } from 'react-router-dom';
 
 export function ErrorPage() {
   const error = useRouteError() as Error;
-
-  const authorizedUser = useAppSelector(userModel.selectUser);
-
-  if (!authorizedUser) {
-    return <Navigate to="/login" replace />;
-  }
 
   // TODO Refine ErrorPage
   return (
@@ -19,7 +9,7 @@ export function ErrorPage() {
       <h1>Помилка</h1>
       <p>{error.message}</p>
       <p>
-        <Link to={`/${authorizedUser.userName}/main`}>Перейти на головну</Link>
+        <Link to="/">Перейти на головну</Link>
       </p>
     </div>
   );
