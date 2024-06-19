@@ -1,5 +1,5 @@
-import { Button } from '~/shared/ui/button';
 import {
+  Button,
   Form,
   FormControl,
   FormDescription,
@@ -7,8 +7,8 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from '~/shared/ui/form';
-import { Input } from '~/shared/ui/input';
+  Input,
+} from '~/shared/ui';
 
 import { useLastNameForm } from '../lib';
 

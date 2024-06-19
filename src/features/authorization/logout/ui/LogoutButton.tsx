@@ -7,8 +7,8 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
   AlertDialogTrigger,
-} from '~/shared/ui/alert-dialog';
-import { Button } from '~/shared/ui/button';
+  Button,
+} from '~/shared/ui';
 
 import { useLogout } from '../lib';
 

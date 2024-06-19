@@ -1,22 +1,20 @@
 'use client';
 
-import { Button } from '~/shared/ui/button';
 import {
+  Button,
   Card,
   CardContent,
   CardFooter,
   CardHeader,
   CardTitle,
-} from '~/shared/ui/card';
-import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-} from '~/shared/ui/form';
-import { Input } from '~/shared/ui/input';
+  Input,
+} from '~/shared/ui';
 
 import { useLogin } from '../lib';
 

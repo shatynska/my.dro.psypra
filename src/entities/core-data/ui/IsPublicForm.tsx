@@ -1,12 +1,12 @@
-import { Button } from '~/shared/ui/button';
 import {
+  Button,
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
-} from '~/shared/ui/form';
-import { Switch } from '~/shared/ui/switch';
+  Switch,
+} from '~/shared/ui';
 
 import { useIsPublicForm } from '../lib';
 

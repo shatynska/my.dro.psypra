@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 
 import { useAppSelector } from '~/shared/lib';
-import { Skeleton } from '~/shared/ui/skeleton';
+import { Skeleton } from '~/shared/ui';
 
 import { userModel } from '~/entities/user';
 
