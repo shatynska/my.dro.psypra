@@ -1,0 +1,1 @@
+export { useSpecialist } from './lib';
