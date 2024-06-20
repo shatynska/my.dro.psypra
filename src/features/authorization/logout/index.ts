@@ -1,1 +1,1 @@
-export { LogoutButton } from './ui';
+export { LogoutButtonWithAlertDialog } from './ui';

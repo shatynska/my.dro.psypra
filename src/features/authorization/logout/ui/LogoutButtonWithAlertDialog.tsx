@@ -12,7 +12,7 @@ import {
 
 import { useLogout } from '../lib';
 
-export function LogoutButton() {
+export function LogoutButtonWithAlertDialog() {
   const { handleLogout } = useLogout();
 
   return (

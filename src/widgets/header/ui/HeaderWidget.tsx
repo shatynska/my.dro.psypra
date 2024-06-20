@@ -2,7 +2,7 @@ import { useAppSelector } from '~/shared/lib';
 
 import { userModel } from '~/entities/user';
 
-import { LogoutButton } from '~/features/authorization/logout';
+import { LogoutButtonWithAlertDialog } from '~/features/authorization/logout';
 
 export function HeaderWidget() {
   const userName = useAppSelector(userModel.selectUserName);
@@ -12,7 +12,7 @@ export function HeaderWidget() {
       <div>My.Dro.PsyPra</div>
       <div className="flex items-center gap-8">
         {userName}
-        <LogoutButton />
+        <LogoutButtonWithAlertDialog />
       </div>
     </header>
   );
