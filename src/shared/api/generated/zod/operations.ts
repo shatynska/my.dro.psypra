@@ -28,11 +28,11 @@ import {
 import { usersControllerMeQueryResponseSchema } from './usersController/usersControllerMeSchema';
 import { usersControllerUpdateUserMutationResponseSchema } from './usersController/usersControllerUpdateUserSchema';
 import {
-  getCoreControllerHandleQueryResponseSchema,
-  getCoreControllerHandle401Schema,
-  getCoreControllerHandle403Schema,
-  getCoreControllerHandlePathParamsSchema,
-} from './profilesController/getCoreControllerHandleSchema';
+  getFirstNameControllerHandleQueryResponseSchema,
+  getFirstNameControllerHandle401Schema,
+  getFirstNameControllerHandle403Schema,
+  getFirstNameControllerHandlePathParamsSchema,
+} from './profilesController/getFirstNameControllerHandleSchema';
 import {
   updateFirstNameControllerHandleMutationRequestSchema,
   updateFirstNameControllerHandleMutationResponseSchema,
@@ -41,12 +41,11 @@ import {
   updateFirstNameControllerHandlePathParamsSchema,
 } from './profilesController/updateFirstNameControllerHandleSchema';
 import {
-  updateIsPublicControllerHandleMutationRequestSchema,
-  updateIsPublicControllerHandleMutationResponseSchema,
-  updateIsPublicControllerHandle401Schema,
-  updateIsPublicControllerHandle403Schema,
-  updateIsPublicControllerHandlePathParamsSchema,
-} from './profilesController/updateIsPublicControllerHandleSchema';
+  getLastNameControllerHandleQueryResponseSchema,
+  getLastNameControllerHandle401Schema,
+  getLastNameControllerHandle403Schema,
+  getLastNameControllerHandlePathParamsSchema,
+} from './profilesController/getLastNameControllerHandleSchema';
 import {
   updateLastNameControllerHandleMutationRequestSchema,
   updateLastNameControllerHandleMutationResponseSchema,
@@ -54,6 +53,19 @@ import {
   updateLastNameControllerHandle403Schema,
   updateLastNameControllerHandlePathParamsSchema,
 } from './profilesController/updateLastNameControllerHandleSchema';
+import {
+  getIsPublicControllerHandleQueryResponseSchema,
+  getIsPublicControllerHandle401Schema,
+  getIsPublicControllerHandle403Schema,
+  getIsPublicControllerHandlePathParamsSchema,
+} from './profilesController/getIsPublicControllerHandleSchema';
+import {
+  updateIsPublicControllerHandleMutationRequestSchema,
+  updateIsPublicControllerHandleMutationResponseSchema,
+  updateIsPublicControllerHandle401Schema,
+  updateIsPublicControllerHandle403Schema,
+  updateIsPublicControllerHandlePathParamsSchema,
+} from './profilesController/updateIsPublicControllerHandleSchema';
 import {
   removeContactControllerHandleMutationRequestSchema,
   removeContactControllerHandleMutationResponseSchema,
@@ -214,17 +226,17 @@ export const operations = {
       200: usersControllerUpdateUserMutationResponseSchema,
     },
   },
-  GetCoreController_handle: {
+  GetFirstNameController_handle: {
     request: undefined,
     parameters: {
-      path: getCoreControllerHandlePathParamsSchema,
+      path: getFirstNameControllerHandlePathParamsSchema,
       query: undefined,
       header: undefined,
     },
     responses: {
-      200: getCoreControllerHandleQueryResponseSchema,
-      401: getCoreControllerHandle401Schema,
-      403: getCoreControllerHandle403Schema,
+      200: getFirstNameControllerHandleQueryResponseSchema,
+      401: getFirstNameControllerHandle401Schema,
+      403: getFirstNameControllerHandle403Schema,
     },
   },
   UpdateFirstNameController_handle: {
@@ -240,17 +252,17 @@ export const operations = {
       403: updateFirstNameControllerHandle403Schema,
     },
   },
-  UpdateIsPublicController_handle: {
-    request: updateIsPublicControllerHandleMutationRequestSchema,
+  GetLastNameController_handle: {
+    request: undefined,
     parameters: {
-      path: updateIsPublicControllerHandlePathParamsSchema,
+      path: getLastNameControllerHandlePathParamsSchema,
       query: undefined,
       header: undefined,
     },
     responses: {
-      200: updateIsPublicControllerHandleMutationResponseSchema,
-      401: updateIsPublicControllerHandle401Schema,
-      403: updateIsPublicControllerHandle403Schema,
+      200: getLastNameControllerHandleQueryResponseSchema,
+      401: getLastNameControllerHandle401Schema,
+      403: getLastNameControllerHandle403Schema,
     },
   },
   UpdateLastNameController_handle: {
@@ -264,6 +276,32 @@ export const operations = {
       200: updateLastNameControllerHandleMutationResponseSchema,
       401: updateLastNameControllerHandle401Schema,
       403: updateLastNameControllerHandle403Schema,
+    },
+  },
+  GetIsPublicController_handle: {
+    request: undefined,
+    parameters: {
+      path: getIsPublicControllerHandlePathParamsSchema,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: getIsPublicControllerHandleQueryResponseSchema,
+      401: getIsPublicControllerHandle401Schema,
+      403: getIsPublicControllerHandle403Schema,
+    },
+  },
+  UpdateIsPublicController_handle: {
+    request: updateIsPublicControllerHandleMutationRequestSchema,
+    parameters: {
+      path: updateIsPublicControllerHandlePathParamsSchema,
+      query: undefined,
+      header: undefined,
+    },
+    responses: {
+      200: updateIsPublicControllerHandleMutationResponseSchema,
+      401: updateIsPublicControllerHandle401Schema,
+      403: updateIsPublicControllerHandle403Schema,
     },
   },
   RemoveContactController_handle: {
@@ -364,17 +402,17 @@ export const paths = {
     get: operations['UsersController_me'],
     put: operations['UsersController_updateUser'],
   },
-  '/api/profiles/{specialist}/core': {
-    get: operations['GetCoreController_handle'],
-  },
   '/api/profiles/{specialist}/core/first-name': {
+    get: operations['GetFirstNameController_handle'],
     patch: operations['UpdateFirstNameController_handle'],
   },
-  '/api/profiles/{specialist}/core/is-public': {
-    patch: operations['UpdateIsPublicController_handle'],
-  },
   '/api/profiles/{specialist}/core/last-name': {
+    get: operations['GetLastNameController_handle'],
     patch: operations['UpdateLastNameController_handle'],
+  },
+  '/api/profiles/{specialist}/core/is-public': {
+    get: operations['GetIsPublicController_handle'],
+    patch: operations['UpdateIsPublicController_handle'],
   },
   '/api/profiles/{specialist}/contacts': {
     delete: operations['RemoveContactController_handle'],
